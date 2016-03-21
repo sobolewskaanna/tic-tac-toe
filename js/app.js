@@ -21,6 +21,7 @@ $(document).ready(function() {
       null, null, null,
       null, null, null
     ];
+    $(stringBoxes).removeClass("styleO");
   }
 
   //reset button on click
@@ -60,6 +61,7 @@ $(document).ready(function() {
       if (ticTacToeBoard[computerChoice] === null) { //if array of index of computer choice is null
         var selection = "#box"+computerChoice; //set box number to variable
         $(selection).append(playerTurn); //add O to appropriate box
+        $(selection).addClass("styleO"); //adds a class to O that allows for different style
         ticTacToeBoard.splice(computerChoice, 1, playerTurn); //add O to the array with appropriate index
         return; // stop
       } else {
